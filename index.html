@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OX Water - Where Health Meets Luxury</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #e8f4f8 0%, #ffffff 100%);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 150, 200, 0.1);
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #0096c7 0%, #00b4d8 50%, #48cae4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #023e8a;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #0096c7, #48cae4);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 5% 4rem;
+            background: linear-gradient(135deg, #caf0f8 0%, #ade8f4 50%, #90e0ef 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(72, 202, 228, 0.3) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 180, 216, 0.2) 0%, transparent 70%);
+            bottom: -150px;
+            left: -150px;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-30px) translateX(20px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #023e8a 0%, #0077b6 50%, #0096c7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #0077b6;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: linear-gradient(135deg, #0096c7 0%, #00b4d8 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0, 150, 199, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #48cae4 0%, #90e0ef 100%);
+            transition: left 0.4s ease;
+        }
+
+        .cta-button span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button:hover::before {
+            left: 0;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 150, 199, 0.4);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 5%;
+            background: linear-gradient(180deg, #ffffff 0%, #e8f4f8 100%);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 4rem;
+            background: linear-gradient(135deg, #023e8a 0%, #0096c7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 150, 199, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #0096c7, #48cae4, #90e0ef);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 150, 199, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: #023e8a;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, #90e0ef 0%, #ade8f4 50%, #caf0f8 100%);
+        }
+
+        .benefits-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-item {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .benefit-item:hover {
+            border-color: #0096c7;
+            transform: scale(1.05);
+            background: white;
+        }
+
+        .benefit-item h3 {
+            color: #023e8a;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .benefit-item p {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Vision Mission Section */
+        .vision-mission {
+            padding: 6rem 5%;
+            background: linear-gradient(180deg, #e8f4f8 0%, #ffffff 100%);
+        }
+
+        .vm-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+        }
+
+        .vm-card {
+            background: linear-gradient(135deg, #0096c7 0%, #00b4d8 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            color: white;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vm-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            transition: all 0.6s ease;
+        }
+
+        .vm-card:hover::before {
+            top: -60%;
+            right: -60%;
+        }
+
+        .vm-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(0, 150, 199, 0.3);
+        }
+
+        .vm-card h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .vm-card p {
+            line-height: 1.8;
+            position: relative;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, #023e8a 0%, #0077b6 50%, #0096c7 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-grid {
+            max-width: 1000px;
+            margin: 3rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #90e0ef;
+            transform: scale(1.05);
+        }
+
+        .contact-item h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-item p {
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: #023e8a;
+            color: white;
+            text-align: center;
+            padding: 2rem 5%;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .vm-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">OX WATER</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>OX WATER</h1>
+            <p class="hero-subtitle">Where Health Meets Luxury</p>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #0077b6;">An experience that elevates hydration to a new level of luxury and health</p>
+            <a href="#contact" class="cta-button"><span>Experience OX Water</span></a>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <h2 class="section-title">Key Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">💎</div>
+                <h3>Premium Quality</h3>
+                <p>Sourced from the purest natural springs and undergoes an advanced filtration process to ensure the highest quality.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌿</div>
+                <h3>Health-Infused</h3>
+                <p>Packed with essential minerals, ensuring every sip nurtures both body and mind with a focus on wellness.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>Sustainable & Eco-Friendly</h3>
+                <p>Our commitment reflected in recyclable glass bottles and eco-conscious sourcing methods.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h3>Luxury Experience</h3>
+                <p>Each bottle offers not only purity but elegance, making OX Water a true status symbol.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits" class="benefits">
+        <h2 class="section-title">Health Benefits</h2>
+        <div class="benefits-container">
+            <div class="benefit-item">
+                <h3>💧 Enhanced Hydration</h3>
+                <p>Infused with pure oxygen, OX Water supports optimal hydration, aiding in temperature regulation, blood pressure maintenance, and proper brain function.</p>
+            </div>
+            <div class="benefit-item">
+                <h3>⚡ Improved Recovery</h3>
+                <p>Regular consumption may assist in faster recovery post-exercise by enhancing lactate clearance, allowing for longer aerobic workouts and reduced muscle fatigue.</p>
+            </div>
+            <div class="benefit-item">
+                <h3>🌱 Natural Detoxification</h3>
+                <p>Adequate hydration with oxygen-rich water supports the body's natural detoxification processes, promoting overall health and vitality.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="vision-mission">
+        <h2 class="section-title">Our Vision & Mission</h2>
+        <div class="vm-container">
+            <div class="vm-card">
+                <h2>Our Vision</h2>
+                <p>To redefine hydration by offering a premium, natural water experience that seamlessly blends health with luxury, elevating every moment with purity, sophistication, and sustainability.</p>
+            </div>
+            <div class="vm-card">f
+                <h2>Our Mission</h2>
+                <p>To deliver a superior hydration experience that goes beyond mere thirst-quenching. We provide a product that is both healthy and indulgent, crafted through state-of-the-art filtration systems to ensure purity and quality.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title" style="color: white;">Get In Touch</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">If you have any questions or would like to explore opportunities to work together, please reach out to us.</p>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <h3>📞 Phone</h3>
+                <p>+27 65 976 5690</p>
+            </div>
+            <div class="contact-item">
+                <h3>✉️ Email</h3>
+                <p>info.suc@aol.com</p>
+            </div>
+            <div class="contact-item">
+                <h3>📍 Location</h3>
+                <p>Financial Square entrance 5, 1st floor, office B7<br>C/O Mandela and Woitemade Street<br>Emalahleni, South Africa</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 OX Water. All rights reserved. | Presented by The Step Up Capital</p>
+    </footer>
+</body>
+</html>
