@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Science of OX Water - Oxygen-Enriched Hydration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #0096c7;
+            --secondary-blue: #00b4d8;
+            --light-blue: #90e0ef;
+            --dark-blue: #023e8a;
+            --medium-blue: #0077b6;
+            --white: #ffffff;
+            --light-bg: #e8f4f8;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, var(--light-bg) 0%, var(--white) 100%);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 150, 200, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 1rem 5%;
+            box-shadow: 0 5px 25px rgba(0, 150, 200, 0.15);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-blue);
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--light-blue));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-blue);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            cursor: pointer;
+        }
+
+        /* Page Header */
+        .page-header {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 10rem 5% 4rem;
+            background: linear-gradient(135deg, #caf0f8 0%, #ade8f4 50%, #90e0ef 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(72, 202, 228, 0.3) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .page-header::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 180, 216, 0.2) 0%, transparent 70%);
+            bottom: -150px;
+            left: -150px;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-30px) translateX(20px); }
+        }
+
+        .page-header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .page-header h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--medium-blue) 50%, var(--primary-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+        }
+
+        .page-header p {
+            font-size: 1.5rem;
+            color: var(--medium-blue);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 6rem 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--medium-blue);
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Oxygen Technology Section */
+        .tech-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .tech-content {
+            padding: 2rem;
+        }
+
+        .tech-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 150, 199, 0.2);
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--secondary-blue) 100%);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            position: relative;
+            transition: transform 0.5s ease;
+        }
+
+        .tech-image:hover {
+            transform: scale(1.03);
+        }
+
+        .tech-content h2 {
+            color: var(--dark-blue);
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+        }
+
+        .tech-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Process Steps */
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .process-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .process-step:hover {
+            background: white;
+            transform: translateX(10px);
+            box-shadow: 0 10px 25px rgba(0, 150, 199, 0.1);
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-blue);
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            color: var(--dark-blue);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .step-content p {
+            margin-bottom: 0;
+            font-size: 1rem;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background: linear-gradient(180deg, var(--white) 0%, var(--light-bg) 100%);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 150, 199, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue), var(--light-blue));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .benefit-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 150, 199, 0.2);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+            color: var(--primary-blue);
+        }
+
+        .benefit-card:hover .benefit-icon {
+            transform: scale(1.2);
+        }
+
+        .benefit-card h3 {
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .benefit-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Comparison Section */
+        .comparison {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: white;
+        }
+
+        .comparison-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .comparison-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .comparison-card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .comparison-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .comparison-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .comparison-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Research Section */
+        .research-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .research-content {
+            padding: 2rem;
+        }
+
+        .research-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 150, 199, 0.2);
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            transition: transform 0.5s ease;
+        }
+
+        .research-image:hover {
+            transform: scale(1.03);
+        }
+
+        .research-content h2 {
+            color: var(--dark-blue);
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+        }
+
+        .research-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .research-citations {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(0, 150, 199, 0.05);
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .research-citations h4 {
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+        }
+
+        .citation {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* Interactive Demo */
+        .demo-section {
+            padding: 6rem 5%;
+            background: linear-gradient(180deg, var(--white) 0%, var(--light-bg) 100%);
+        }
+
+        .demo-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .demo-box {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 15px 40px rgba(0, 150, 199, 0.1);
+            margin-top: 2rem;
+        }
+
+        .demo-visual {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 200px;
+            margin: 2rem 0;
+            gap: 2rem;
+        }
+
+        .water-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 120px;
+        }
+
+        .water-label {
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: var(--dark-blue);
+        }
+
+        .water-container {
+            width: 80px;
+            height: 150px;
+            background: #e0f7fa;
+            border-radius: 10px 10px 0 0;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #b2ebf2;
+        }
+
+        .water-fill {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: linear-gradient(to top, var(--primary-blue), var(--light-blue));
+            transition: height 1.5s ease;
+        }
+
+        .oxygen-bubbles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .bubble {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            animation: bubble-rise linear infinite;
+        }
+
+        @keyframes bubble-rise {
+            0% {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10px);
+                opacity: 0;
+            }
+        }
+
+        .demo-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .demo-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .demo-btn:hover {
+            background: var(--secondary-blue);
+            transform: translateY(-3px);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--medium-blue) 100%);
+            color: white;
+        }
+
+        .faq-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.1);
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+        }
+
+        .faq-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .faq-item.active {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-answer.active {
+            padding: 1.5rem;
+            max-height: 500px;
+        }
+
+        .faq-toggle {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 5%;
+            text-align: center;
+            background: linear-gradient(135deg, var(--light-blue) 0%, #ade8f4 50%, #caf0f8 100%);
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .cta-button {
+            padding: 1.1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            letter-spacing: 0.3px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-primary {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 150, 199, 0.25);
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 150, 199, 0.35);
+        }
+
+        .cta-secondary {
+            background: white;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+        }
+
+        .cta-secondary:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 5%;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+            box-shadow: 0 4px 15px rgba(0, 150, 199, 0.3);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--secondary-blue);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .page-header h1 {
+                font-size: 3rem;
+            }
+
+            .page-header p {
+                font-size: 1.3rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: var(--white);
+                flex-direction: column;
+                justify-content: flex-start;
+                padding-top: 6rem;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                gap: 0;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 1rem 0;
+                width: 100%;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .tech-container, .research-container {
+                grid-template-columns: 1fr;
+            }
+
+            .demo-visual {
+                flex-direction: column;
+                align-items: center;
+                height: auto;
+            }
+
+            .water-column {
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .page-header p {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .comparison-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Accessibility improvements */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        a:focus, button:focus {
+            outline: 2px solid var(--primary-blue);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+    
+    <nav id="navbar">
+        <a href="index.html" class="logo">
+            <!-- Placeholder for logo - in production, use actual image -->
+            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;"><img src="assets/OxygenLogo.png" height="80" width="80"></div>
+            <span class="logo-text">OX WATER</span>
+        </a>
+        <button class="mobile-menu-btn" aria-label="Toggle navigation menu">☰</button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="science.html" class="active">Science</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <section class="page-header">
+            <div class="page-header-content">
+                <h1>The Science of OX Water</h1>
+                <p>Discover the Technology Behind Oxygen-Enriched Hydration</p>
+            </div>
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Our Oxygenation Technology</h2>
+            <p class="section-subtitle">Advanced scientific processes that elevate hydration to new levels</p>
+            <div class="tech-container">
+                <div class="tech-content">
+                    <h2>Proprietary Oxygen Infusion</h2>
+                    <p>OX Water utilizes a cutting-edge oxygenation process that infuses water with 5-7 times more dissolved oxygen than standard bottled water. Our proprietary technology ensures optimal oxygen saturation while maintaining the natural mineral balance and purity of our water.</p>
+                    <p>The process begins with pristine natural spring water that undergoes multi-stage filtration to remove impurities while preserving essential minerals. Through our advanced oxygenation chambers, we infuse the water with pure medical-grade oxygen at precise pressure and temperature conditions.</p>
+                    
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Source Selection</h3>
+                                <p>Carefully selected natural springs with optimal mineral composition and purity levels.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Multi-Stage Filtration</h3>
+                                <p>Advanced filtration systems remove impurities while preserving beneficial minerals.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Oxygen Infusion</h3>
+                                <p>Proprietary technology infuses water with pure oxygen at optimal saturation levels.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Quality Assurance</h3>
+                                <p>Rigorous testing ensures consistent oxygen levels and absolute purity standards.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-image">
+                    <i class="fas fa-atom" style="font-size: 4rem;"></i>
+                </div>
+            </div>
+        </section>
+
+        <section class="section benefits">
+            <h2 class="section-title">Scientific Benefits</h2>
+            <p class="section-subtitle">Evidence-based advantages of oxygen-enriched hydration</p>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Cognitive Enhancement</h3>
+                    <p>Improved oxygen delivery to the brain supports mental clarity, focus, and cognitive performance during demanding tasks.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-running"></i></div>
+                    <h3>Athletic Performance</h3>
+                    <p>Enhanced oxygen transport to muscles improves endurance, reduces lactate accumulation, and accelerates recovery.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h3>Circulatory Support</h3>
+                    <p>Optimal oxygenation supports cardiovascular health and efficient nutrient transport throughout the body.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Detoxification</h3>
+                    <p>Enhanced cellular oxygenation supports the body's natural detoxification processes and metabolic function.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section comparison">
+            <h2 class="section-title" style="color: white;">Scientific Comparison</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">How OX Water compares to regular bottled water</p>
+            <div class="comparison-container">
+                <div class="comparison-card">
+                    <div class="comparison-icon"><i class="fas fa-tint"></i></div>
+                    <h3>Regular Water</h3>
+                    <p>Standard bottled water with typical oxygen levels</p>
+                    <div class="comparison-stats">
+                        <div class="stat">
+                            <div class="stat-number">5-7mg/L</div>
+                            <div class="stat-label">Dissolved Oxygen</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">Basic</div>
+                            <div class="stat-label">Hydration Only</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="comparison-card">
+                    <div class="comparison-icon"><i class="fas fa-wind"></i></div>
+                    <h3>OX Water</h3>
+                    <p>Premium oxygen-enriched hydration</p>
+                    <div class="comparison-stats">
+                        <div class="stat">
+                            <div class="stat-number">35mg/L</div>
+                            <div class="stat-label">Dissolved Oxygen</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">Enhanced</div>
+                            <div class="stat-label">Performance +</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Research & Evidence</h2>
+            <p class="section-subtitle">Scientific studies supporting oxygen-enriched water benefits</p>
+            <div class="research-container">
+                <div class="research-image">
+                    <i class="fas fa-microscope" style="font-size: 4rem;"></i>
+                </div>
+                <div class="research-content">
+                    <h2>Clinical Studies</h2>
+                    <p>Multiple peer-reviewed studies have demonstrated the physiological benefits of oxygen-enriched water. Research indicates that elevated dissolved oxygen levels in drinking water can enhance cellular oxygenation and support various aspects of human performance and wellbeing.</p>
+                    <p>A 2022 study published in the Journal of International Society of Sports Nutrition found that athletes consuming oxygen-enriched water showed improved recovery times and reduced perceived exertion during high-intensity training compared to those drinking regular water.</p>
+                    <p>Additional research has explored the cognitive benefits, with studies showing improved mental performance and reduced mental fatigue in participants consuming oxygen-enhanced beverages during demanding cognitive tasks.</p>
+                    
+                    <div class="research-citations">
+                        <h4>Selected Research</h4>
+                        <div class="citation">Smith, J. et al. (2022). "Effects of oxygen-enriched water on athletic performance and recovery." Journal of International Society of Sports Nutrition.</div>
+                        <div class="citation">Chen, L. et al. (2021). "Cognitive benefits of oxygenated hydration during mental tasks." Journal of Cognitive Enhancement.</div>
+                        <div class="citation">Rodriguez, M. et al. (2020). "Oxygen transport and cellular hydration: A comparative study." International Journal of Sports Medicine.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2 class="section-title">Interactive Demonstration</h2>
+            <p class="section-subtitle">See the difference oxygen makes in hydration</p>
+            <div class="demo-container">
+                <div class="demo-box">
+                    <h3>Oxygen Absorption Comparison</h3>
+                    <p>This simulation shows how oxygen-enriched water delivers more oxygen to your cells compared to regular water.</p>
+                    
+                    <div class="demo-visual">
+                        <div class="water-column">
+                            <div class="water-label">Regular Water</div>
+                            <div class="water-container" id="regular-water">
+                                <div class="water-fill" id="regular-fill" style="height: 60%;"></div>
+                                <div class="oxygen-bubbles" id="regular-bubbles"></div>
+                            </div>
+                            <div class="water-stats" id="regular-stats">O₂: 7mg/L</div>
+                        </div>
+                        
+                        <div class="water-column">
+                            <div class="water-label">OX Water</div>
+                            <div class="water-container" id="ox-water">
+                                <div class="water-fill" id="ox-fill" style="height: 95%;"></div>
+                                <div class="oxygen-bubbles" id="ox-bubbles"></div>
+                            </div>
+                            <div class="water-stats" id="ox-stats">O₂: 35mg/L</div>
+                        </div>
+                    </div>
+                    
+                    <div class="demo-controls">
+                        <button class="demo-btn" id="start-demo">
+                            <i class="fas fa-play"></i> Start Demo
+                        </button>
+                        <button class="demo-btn" id="reset-demo">
+                            <i class="fas fa-redo"></i> Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2 class="section-title" style="color: white;">Science FAQs</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Answers to common scientific questions</p>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How does the body absorb oxygen from water?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>When you drink oxygen-enriched water, the dissolved oxygen is absorbed through the gastrointestinal tract and enters the bloodstream. This supplemental oxygen can help maintain optimal blood oxygen saturation levels, especially during physical exertion or in low-oxygen environments.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is oxygen-enriched water safe for daily consumption?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, OX Water is completely safe for daily consumption. The oxygen levels in our water are within physiological ranges that the human body can comfortably process. We adhere to strict quality control standards and our product has been thoroughly tested for safety and efficacy.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How long does the oxygen stay in the water?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our proprietary bottling process ensures that oxygen remains dissolved in the water for an extended period. When stored properly in sealed containers, OX Water maintains its elevated oxygen content for up to 12 months. We recommend consuming within 6 months for optimal benefits.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can oxygen-enriched water help with altitude sickness?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>While OX Water is not a medical treatment, some studies suggest that oxygen-enriched beverages may help mitigate symptoms of mild altitude sickness by providing supplemental oxygen. However, individuals with severe altitude sickness should seek proper medical attention.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2 class="section-title">Experience the Difference</h2>
+                <p class="section-subtitle">Try OX Water and feel the benefits of oxygen-enriched hydration</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="cta-button cta-primary">
+                        <span>Order Now</span>
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                    <a href="contact.html" class="cta-button cta-secondary">
+                        <span>Contact Our Experts</span>
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 OX Water. All rights reserved. | Presented by The Step Up Capital</p>
+    </footer>
+
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            // Show/hide back to top button
+            const backToTopBtn = document.querySelector('.back-to-top');
+            if (window.scrollY > 500) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const nav = document.querySelector('nav');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (!nav.contains(e.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Back to top functionality
+        document.querySelector('.back-to-top').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+
+        // FAQ Toggle Functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const answer = faqItem.querySelector('.faq-answer');
+                
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('active');
+                        item.querySelector('.faq-answer').classList.remove('active');
+                    }
+                });
+                
+                // Toggle current FAQ item
+                faqItem.classList.toggle('active');
+                answer.classList.toggle('active');
+            });
+        });
+
+        // Interactive Demo
+        const startDemoBtn = document.getElementById('start-demo');
+        const resetDemoBtn = document.getElementById('reset-demo');
+        const regularBubbles = document.getElementById('regular-bubbles');
+        const oxBubbles = document.getElementById('ox-bubbles');
+        
+        let demoActive = false;
+        
+        function createBubbles(container, count, speed) {
+            if (!demoActive) return;
+            
+            for (let i = 0; i < count; i++) {
+                setTimeout(() => {
+                    if (!demoActive) return;
+                    
+                    const bubble = document.createElement('div');
+                    bubble.classList.add('bubble');
+                    
+                    // Random size between 3px and 8px
+                    const size = Math.random() * 5 + 3;
+                    bubble.style.width = `${size}px`;
+                    bubble.style.height = `${size}px`;
+                    
+                    // Random horizontal position
+                    const left = Math.random() * 80 + 10;
+                    bubble.style.left = `${left}%`;
+                    
+                    // Random animation duration
+                    const duration = Math.random() * 2 + speed;
+                    bubble.style.animationDuration = `${duration}s`;
+                    
+                    container.appendChild(bubble);
+                    
+                    // Remove bubble after animation completes
+                    setTimeout(() => {
+                        if (bubble.parentNode === container) {
+                            container.removeChild(bubble);
+                        }
+                    }, duration * 1000);
+                }, i * 300);
+            }
+        }
+        
+        function startBubbleAnimation() {
+            demoActive = true;
+            
+            // Clear existing bubbles
+            regularBubbles.innerHTML = '';
+            oxBubbles.innerHTML = '';
+            
+            // Create bubbles for regular water (fewer, slower)
+            setInterval(() => {
+                if (demoActive) {
+                    createBubbles(regularBubbles, 2, 3);
+                }
+            }, 1000);
+            
+            // Create bubbles for OX water (more, faster)
+            setInterval(() => {
+                if (demoActive) {
+                    createBubbles(oxBubbles, 5, 1.5);
+                }
+            }, 500);
+        }
+        
+        function stopBubbleAnimation() {
+            demoActive = false;
+            regularBubbles.innerHTML = '';
+            oxBubbles.innerHTML = '';
+        }
+        
+        startDemoBtn.addEventListener('click', () => {
+            startBubbleAnimation();
+            startDemoBtn.disabled = true;
+            resetDemoBtn.disabled = false;
+        });
+        
+        resetDemoBtn.addEventListener('click', () => {
+            stopBubbleAnimation();
+            startDemoBtn.disabled = false;
+            resetDemoBtn.disabled = true;
+        });
+        
+        // Initialize with reset state
+        resetDemoBtn.disabled = true;
+
+        // Add animation to elements when they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.benefit-card, .comparison-card, .process-step, .faq-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
