@@ -124,9 +124,20 @@
             align-items: center;
             justify-content: center;
             padding: 8rem 8% 4rem;
-            background: linear-gradient(135deg, #f8fbfd 0%, #e3f2fd 100%);
+            background: linear-gradient(135deg, rgba(248, 251, 253, 0.9) 0%, rgba(227, 242, 253, 0.9) 100%);
             position: relative;
             overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            opacity: 0.4;
+            z-index: 0;
         }
 
         .hero::before {
@@ -138,7 +149,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            z-index: 0;
+            z-index: 1;
         }
 
         .oxygen-particles {
@@ -148,6 +159,7 @@
             top: 0;
             left: 0;
             overflow: hidden;
+            z-index: 1;
         }
 
         .particle {
@@ -184,7 +196,7 @@
 
         .hero-content {
             position: relative;
-            z-index: 1;
+            z-index: 2;
             max-width: 1000px;
             text-align: center;
         }
@@ -192,7 +204,7 @@
         .hero-badge {
             display: inline-block;
             padding: 0.6rem 1.5rem;
-            background: rgba(0, 150, 199, 0.1);
+            background: rgba(255, 255, 255, 0.8);
             border: 1px solid rgba(0, 150, 199, 0.2);
             border-radius: 50px;
             color: var(--primary-blue);
@@ -201,6 +213,7 @@
             letter-spacing: 1px;
             text-transform: uppercase;
             margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
         }
 
         .hero h1 {
@@ -412,6 +425,19 @@
             padding: 8rem 8%;
             background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
             color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .science-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            opacity: 0.1;
+            z-index: 0;
         }
 
         .science-content {
@@ -421,6 +447,8 @@
             grid-template-columns: 1fr 1fr;
             gap: 5rem;
             align-items: center;
+            position: relative;
+            z-index: 1;
         }
 
         .science-text h2 {
@@ -578,11 +606,26 @@
             padding: 8rem 8%;
             background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
             color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            opacity: 0.1;
+            z-index: 0;
         }
 
         .contact-container {
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .contact-grid {
@@ -795,6 +838,7 @@
 
     <main id="main-content">
         <section id="home" class="hero">
+            <div class="hero-bg"></div>
             <div class="oxygen-particles">
                 <div class="particle"></div>
                 <div class="particle"></div>
@@ -870,6 +914,7 @@
         </section>
 
         <section id="science" class="science">
+            <div class="science-bg"></div>
             <div class="science-content">
                 <div class="science-text">
                     <h2>The Science of Oxygen-Enriched Hydration</h2>
@@ -942,6 +987,7 @@
         </section>
 
         <section id="contact" class="contact">
+            <div class="contact-bg"></div>
             <div class="contact-container">
                 <div class="section-header">
                     <div class="section-subtitle" style="color: var(--light-blue);">Connect With Us</div>
