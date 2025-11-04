@@ -30,7 +30,6 @@
             line-height: 1.6;
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -113,7 +112,6 @@
             cursor: pointer;
         }
 
-        /* Page Header */
         .page-header {
             min-height: 60vh;
             display: flex;
@@ -121,7 +119,7 @@
             justify-content: center;
             text-align: center;
             padding: 10rem 5% 4rem;
-            background: linear-gradient(135deg, rgba(202, 240, 248, 0.8) 0%, rgba(173, 232, 244, 0.8) 50%, rgba(144, 224, 239, 0.8) 100%), url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            background: linear-gradient(135deg, rgba(2, 62, 138, 0.8) 0%, rgba(0, 119, 182, 0.8) 50%, rgba(0, 150, 199, 0.8) 100%), url('https://images.unsplash.com/photo-1548839140-29a749e1cf4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
             position: relative;
             overflow: hidden;
         }
@@ -159,23 +157,21 @@
             position: relative;
             z-index: 1;
             max-width: 900px;
+            color: white;
         }
 
         .page-header h1 {
             font-size: 4rem;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--medium-blue) 50%, var(--primary-blue) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
             font-weight: 800;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .page-header p {
             font-size: 1.5rem;
-            color: var(--medium-blue);
             margin-bottom: 2rem;
             font-weight: 300;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
         }
 
         .scroll-indicator {
@@ -184,7 +180,7 @@
             left: 50%;
             transform: translateX(-50%);
             animation: bounce 2s infinite;
-            color: var(--primary-blue);
+            color: white;
             font-size: 1.5rem;
         }
 
@@ -194,7 +190,6 @@
             60% { transform: translateX(-50%) translateY(-5px); }
         }
 
-        /* Section Styling */
         .section {
             padding: 6rem 5%;
         }
@@ -219,7 +214,6 @@
             margin-right: auto;
         }
 
-        /* Our Story Section */
         .story-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -237,7 +231,7 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 15px 40px rgba(0, 150, 199, 0.2);
-            background: linear-gradient(135deg, rgba(144, 224, 239, 0.8) 0%, rgba(0, 180, 216, 0.8) 100%), url('https://images.unsplash.com/photo-1548839149-8c5ba42e217a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            background: linear-gradient(135deg, rgba(144, 224, 239, 0.6) 0%, rgba(0, 180, 216, 0.6) 100%), url('https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
             height: 400px;
             display: flex;
             align-items: center;
@@ -304,9 +298,20 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Values Section */
         .values {
             background: linear-gradient(180deg, var(--white) 0%, var(--light-bg) 100%);
+            position: relative;
+        }
+
+        .values-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80') no-repeat center center/cover;
+            opacity: 0.05;
+            z-index: 0;
         }
 
         .values-grid {
@@ -315,6 +320,8 @@
             gap: 2rem;
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .value-card {
@@ -354,6 +361,7 @@
             font-size: 3rem;
             margin-bottom: 1rem;
             transition: transform 0.3s ease;
+            color: var(--primary-blue);
         }
 
         .value-card:hover .value-icon {
@@ -371,9 +379,9 @@
             line-height: 1.6;
         }
 
-        /* Team Section */
         .team {
-            background: linear-gradient(135deg, rgba(144, 224, 239, 0.8) 0%, rgba(173, 232, 244, 0.8) 50%, rgba(202, 240, 248, 0.8) 100%), url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            background: linear-gradient(135deg, rgba(144, 224, 239, 0.7) 0%, rgba(173, 232, 244, 0.7) 50%, rgba(202, 240, 248, 0.7) 100%), url('https://images.unsplash.com/photo-1548839149-851f46986b78?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            position: relative;
         }
 
         .team-container {
@@ -382,6 +390,8 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            position: relative;
+            z-index: 1;
         }
 
         .team-member {
@@ -453,7 +463,6 @@
             color: var(--dark-blue);
         }
 
-        /* Sustainability Section */
         .sustainability-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -467,7 +476,7 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 15px 40px rgba(0, 150, 199, 0.2);
-            background: linear-gradient(135deg, rgba(0, 150, 199, 0.8) 0%, rgba(0, 180, 216, 0.8) 100%), url('https://images.unsplash.com/photo-1548839149-8c5ba42e217a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            background: linear-gradient(135deg, rgba(0, 150, 199, 0.6) 0%, rgba(0, 180, 216, 0.6) 100%), url('https://images.unsplash.com/photo-1621451537084-482c73073a0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
             height: 400px;
             display: flex;
             align-items: center;
@@ -529,10 +538,61 @@
             font-weight: 500;
         }
 
-        /* Contact Section */
+        .impact {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, rgba(2, 62, 138, 0.9) 0%, rgba(0, 119, 182, 0.9) 50%, rgba(0, 150, 199, 0.9) 100%), url('https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+        }
+
+        .impact h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .impact p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .impact-stat {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .impact-stat:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-5px);
+        }
+
+        .impact-stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-stat-label {
+            font-size: 1rem;
+        }
+
         .contact {
             padding: 6rem 5%;
-            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--medium-blue) 50%, var(--primary-blue) 100%), url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--medium-blue) 50%, var(--primary-blue) 100%), url('https://images.unsplash.com/photo-1548839140-29a749e1cf4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
             color: white;
             text-align: center;
         }
@@ -569,7 +629,6 @@
             line-height: 1.6;
         }
 
-        /* Footer */
         footer {
             background: var(--dark-blue);
             color: white;
@@ -577,7 +636,6 @@
             padding: 2rem 5%;
         }
 
-        /* Back to Top Button */
         .back-to-top {
             position: fixed;
             bottom: 2rem;
@@ -610,7 +668,6 @@
             transform: translateY(-3px);
         }
 
-        /* Responsive Design */
         @media (max-width: 968px) {
             .page-header h1 {
                 font-size: 3rem;
@@ -688,9 +745,12 @@
             .story-content h2, .sustainability-content h2 {
                 font-size: 2rem;
             }
+
+            .impact h2 {
+                font-size: 2.2rem;
+            }
         }
 
-        /* Accessibility improvements */
         .sr-only {
             position: absolute;
             width: 1px;
@@ -714,9 +774,8 @@
     
     <nav id="navbar">
         <a href="index.html" class="logo">
-            <!-- Placeholder for logo - in production, use actual image -->
-            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;"><img src="assets/OxygenLogo.png" height="80" width="80"></div>
-            <span class="logo-text">OX WATER</span>
+            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;"><img src="assets/oxygenwaterLogo.png" height="80" width="80"></div>
+            <span class="logo-text"></span>
         </a>
         <button class="mobile-menu-btn" aria-label="Toggle navigation menu">☰</button>
         <ul class="nav-links">
@@ -778,6 +837,7 @@
         </section>
 
         <section class="section values">
+            <div class="values-bg"></div>
             <h2 class="section-title">Our Values</h2>
             <p class="section-subtitle">The principles that guide everything we do</p>
             <div class="values-grid">
@@ -846,14 +906,13 @@
             <p class="section-subtitle">Protecting our planet while delivering premium hydration</p>
             <div class="sustainability-container">
                 <div class="sustainability-image">
-                    <i class="fas fa-seedling" style="font-size: 4rem;"></i>
+                    <i class="fas fa-recycle" style="font-size: 4rem;"></i>
                 </div>
                 <div class="sustainability-content">
-                    <h2>Eco-Conscious Excellence</h2>
-                    <p>At OX Water, we believe that luxury should never come at the expense of our planet. That's why we've implemented comprehensive sustainability practices throughout our operations.</p>
-                    <p>Our signature glass bottles are 100% recyclable and manufactured using eco-friendly processes. We've partnered with conservation organizations to protect water sources and implement responsible water management practices.</p>
-                    <p>Beyond our products, we're committed to reducing our carbon footprint through energy-efficient manufacturing and sustainable supply chain management. We regularly audit our environmental impact and set ambitious goals for continuous improvement.</p>
-                    <p>When you choose OX Water, you're not just selecting a premium hydration experience—you're supporting a brand that cares deeply about preserving our natural world for future generations.</p>
+                    <h2>Sustainable by Design</h2>
+                    <p>At OX Water, we believe that luxury and sustainability are not mutually exclusive. Our commitment to environmental stewardship is woven into every aspect of our business, from sourcing to packaging.</p>
+                    <p>We've pioneered innovative approaches to reduce our carbon footprint, including our state-of-the-art bottling facility that runs on 100% renewable energy and our closed-loop water recycling system that minimizes waste.</p>
+                    <p>Our signature glass bottles are not only elegant but also 100% recyclable, and we've partnered with reforestation organizations to plant a tree for every case of OX Water sold.</p>
                     
                     <div class="sustainability-stats">
                         <div class="sustainability-stat">
@@ -861,37 +920,60 @@
                             <div class="sustainability-stat-label">Recyclable Packaging</div>
                         </div>
                         <div class="sustainability-stat">
-                            <div class="sustainability-stat-number">65%</div>
+                            <div class="sustainability-stat-number">75%</div>
                             <div class="sustainability-stat-label">Reduced Carbon Footprint</div>
                         </div>
                         <div class="sustainability-stat">
-                            <div class="sustainability-stat-number">5M</div>
-                            <div class="sustainability-stat-label">Plastic Bottles Saved</div>
+                            <div class="sustainability-stat-number">50K+</div>
+                            <div class="sustainability-stat-label">Trees Planted</div>
                         </div>
                         <div class="sustainability-stat">
-                            <div class="sustainability-stat-number">2023</div>
-                            <div class="sustainability-stat-label">Carbon Neutral Certified</div>
+                            <div class="sustainability-stat-number">0</div>
+                            <div class="sustainability-stat-label">Water Waste</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <section class="impact">
+            <h2>Making a Difference Through Clean Water</h2>
+            <p>For every bottle of OX Water purchased, we provide clean drinking water to communities in need across Africa. Together, we're making a tangible impact on global water accessibility.</p>
+            <div class="impact-stats">
+                <div class="impact-stat">
+                    <div class="impact-stat-number">50,000+</div>
+                    <div class="impact-stat-label">Liters of Clean Water Provided</div>
+                </div>
+                <div class="impact-stat">
+                    <div class="impact-stat-number">15</div>
+                    <div class="impact-stat-label">Communities Supported</div>
+                </div>
+                <div class="impact-stat">
+                    <div class="impact-stat-number">3</div>
+                    <div class="impact-stat-label">African Countries Reached</div>
+                </div>
+                <div class="impact-stat">
+                    <div class="impact-stat-number">1:1</div>
+                    <div class="impact-stat-label">Give-Back Ratio</div>
+                </div>
+            </div>
+        </section>
+
         <section class="contact">
             <h2 class="section-title" style="color: white;">Get In Touch</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem;">If you have any questions about OX Water or would like to explore partnership opportunities, we'd love to hear from you.</p>
+            <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.9);">We'd love to hear from you</p>
             <div class="contact-grid">
                 <div class="contact-item">
-                    <h3><i class="fas fa-phone"></i> Phone</h3>
+                    <h3>Phone</h3>
                     <p>+27 65 976 5690</p>
                 </div>
                 <div class="contact-item">
-                    <h3><i class="fas fa-envelope"></i> Email</h3>
+                    <h3>Email</h3>
                     <p>info.suc@aol.com</p>
                 </div>
                 <div class="contact-item">
-                    <h3><i class="fas fa-map-marker-alt"></i> Location</h3>
-                    <p>Financial Square entrance 5, 1st floor, office B7<br>C/O Mandela and Woltemade Street<br>Emalahleni, South Africa</p>
+                    <h3>Address</h3>
+                    <p>Financial Square, Entrance 5, 1st Floor<br>Office B7, C/O Mandela & Woitemade St<br>Emalahleni, South Africa</p>
                 </div>
             </div>
         </section>
@@ -901,9 +983,7 @@
         <p>&copy; 2025 OX Water. All rights reserved. | Presented by The Step Up Capital</p>
     </footer>
 
-    <button class="back-to-top" aria-label="Back to top">
-        <i class="fas fa-chevron-up"></i>
-    </button>
+    <button class="back-to-top" aria-label="Back to top">↑</button>
 
     <script>
         // Navbar scroll effect
@@ -924,31 +1004,7 @@
             }
         });
 
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', () => {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            const nav = document.querySelector('nav');
-            const menuBtn = document.querySelector('.mobile-menu-btn');
-            const navLinks = document.querySelector('.nav-links');
-            
-            if (!nav.contains(e.target) && navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-            }
-        });
-
-        // Back to top functionality
-        document.querySelector('.back-to-top').addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Smooth scrolling for anchor links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -965,23 +1021,35 @@
             });
         });
 
-        // Add animation to elements when they come into view
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-in');
-                }
+        // Back to top functionality
+        document.querySelector('.back-to-top').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
-        }, observerOptions);
+        });
 
-        // Observe elements for animation
-        document.querySelectorAll('.value-card, .team-member, .sustainability-stat').forEach(el => {
-            observer.observe(el);
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const nav = document.querySelector('nav');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (!nav.contains(e.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Scroll indicator functionality
+        document.querySelector('.scroll-indicator').addEventListener('click', () => {
+            document.querySelector('.section').scrollIntoView({
+                behavior: 'smooth'
+            });
         });
     </script>
 </body>

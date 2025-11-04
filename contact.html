@@ -121,7 +121,7 @@
             justify-content: center;
             text-align: center;
             padding: 10rem 5% 4rem;
-            background: linear-gradient(135deg, rgba(202, 240, 248, 0.8) 0%, rgba(173, 232, 244, 0.8) 50%, rgba(144, 224, 239, 0.8) 100%), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            background: linear-gradient(135deg, rgba(2, 62, 138, 0.8) 0%, rgba(0, 119, 182, 0.8) 50%, rgba(0, 150, 199, 0.8) 100%), url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80') no-repeat center center/cover;
             position: relative;
             overflow: hidden;
         }
@@ -159,23 +159,21 @@
             position: relative;
             z-index: 1;
             max-width: 900px;
+            color: white;
         }
 
         .page-header h1 {
             font-size: 4rem;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--medium-blue) 50%, var(--primary-blue) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
             font-weight: 800;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .page-header p {
             font-size: 1.5rem;
-            color: var(--medium-blue);
             margin-bottom: 2rem;
             font-weight: 300;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
         }
 
         .scroll-indicator {
@@ -184,7 +182,7 @@
             left: 50%;
             transform: translateX(-50%);
             animation: bounce 2s infinite;
-            color: var(--primary-blue);
+            color: white;
             font-size: 1.5rem;
         }
 
@@ -197,6 +195,18 @@
         /* Contact Section */
         .contact-section {
             padding: 6rem 5%;
+            position: relative;
+        }
+
+        .contact-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80') no-repeat center center/cover;
+            opacity: 0.05;
+            z-index: 0;
         }
 
         .section-title {
@@ -207,6 +217,8 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            position: relative;
+            z-index: 1;
         }
 
         .section-subtitle {
@@ -217,6 +229,8 @@
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            position: relative;
+            z-index: 1;
         }
 
         .contact-container {
@@ -225,6 +239,8 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 3rem;
+            position: relative;
+            z-index: 1;
         }
 
         .contact-info {
@@ -452,7 +468,7 @@
             overflow: hidden;
             box-shadow: 0 15px 40px rgba(0, 150, 199, 0.2);
             height: 400px;
-            background: linear-gradient(135deg, rgba(144, 224, 239, 0.8) 0%, rgba(0, 180, 216, 0.8) 100%), url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            background: linear-gradient(135deg, rgba(0, 150, 199, 0.7) 0%, rgba(0, 180, 216, 0.7) 100%), url('https://images.unsplash.com/photo-1548839149-851f46986b78?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -493,12 +509,26 @@
         /* FAQ Section */
         .faq-section {
             padding: 6rem 5%;
-            background: linear-gradient(180deg, var(--white) 0%, var(--light-bg) 100%), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            background: linear-gradient(180deg, var(--white) 0%, var(--light-bg) 100%);
+            position: relative;
+        }
+
+        .faq-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80') no-repeat center center/cover;
+            opacity: 0.05;
+            z-index: 0;
         }
 
         .faq-container {
             max-width: 1000px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .faq-item {
@@ -559,7 +589,7 @@
         /* Quick Contact */
         .quick-contact {
             padding: 4rem 5%;
-            background: linear-gradient(135deg, rgba(0, 150, 199, 0.9) 0%, rgba(0, 180, 216, 0.9) 100%), url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            background: linear-gradient(135deg, rgba(2, 62, 138, 0.9) 0%, rgba(0, 119, 182, 0.9) 50%, rgba(0, 150, 199, 0.9) 100%), url('https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
             color: var(--white);
             text-align: center;
         }
@@ -734,8 +764,8 @@
     <nav id="navbar">
         <a href="index.html" class="logo">
             <!-- Placeholder for logo - in production, use actual image -->
-            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;"><img src="assets/OxygenLogo.png" height="80" width="80"></div>
-            <span class="logo-text">OX WATER</span>
+            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;"><img src="assets/oxygenwaterLogo.png" height="80" width="80"></div>
+            <span class="logo-text"></span>
         </a>
         <button class="mobile-menu-btn" aria-label="Toggle navigation menu">☰</button>
         <ul class="nav-links">
@@ -758,6 +788,7 @@
         </section>
 
         <section class="contact-section">
+            <div class="contact-bg"></div>
             <h2 class="section-title">Get In Touch</h2>
             <p class="section-subtitle">Have questions about our premium oxygen-enriched water? Reach out to our team for personalized assistance.</p>
             <div class="contact-container">
@@ -886,6 +917,7 @@
         </section>
 
         <section class="faq-section">
+            <div class="faq-bg"></div>
             <h2 class="section-title">Frequently Asked Questions</h2>
             <p class="section-subtitle">Quick answers to common questions about OX Water</p>
             <div class="faq-container">
