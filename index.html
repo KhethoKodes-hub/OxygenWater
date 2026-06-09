@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OX Water - Oxygen-Enriched Premium Water</title>
     <meta name="description" content="Experience OX Water - premium oxygen-enriched hydration for enhanced wellness and performance.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -416,6 +417,7 @@
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
             display: block;
+            color: var(--primary-blue);
         }
 
         .feature-card h3 {
@@ -539,6 +541,7 @@
             justify-content: center;
             font-size: 1.8rem;
             margin-bottom: 1.5rem;
+            color: white;
         }
 
         .benefit-card h3 {
@@ -552,6 +555,66 @@
             color: var(--medium-text);
             line-height: 1.7;
             font-size: 0.95rem;
+        }
+
+        /* Gallery / Product Showcase */
+        .gallery {
+            padding: 8rem 8%;
+            background: linear-gradient(180deg, #ffffff 0%, var(--light-bg) 100%);
+        }
+
+        .gallery-grid {
+            max-width: 1200px;
+            margin: 4rem auto 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 220px;
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 16px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 150, 199, 0.08);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-feature {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        @media (max-width: 968px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .gallery-feature {
+                grid-column: span 2;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 240px;
+            }
+            .gallery-feature {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
         }
 
         /* Vision Mission Section */
@@ -596,6 +659,7 @@
         .vm-icon {
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
+            color: var(--primary-blue);
         }
 
         .vm-card h2 {
@@ -665,6 +729,7 @@
             font-size: 2rem;
             margin-bottom: 1rem;
             display: block;
+            color: var(--light-blue);
         }
 
         .contact-card h3 {
@@ -864,7 +929,7 @@
                 <div class="cta-buttons">
                     <a href="#contact" class="cta-button cta-primary">
                         <span>Get Started</span>
-                        <span aria-hidden="true">→</span>
+                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
                     </a>
                     <a href="#science" class="cta-button cta-secondary">
                         <span>Learn More</span>
@@ -902,22 +967,22 @@
             </div>
             <div class="features-grid">
                 <div class="feature-card">
-                    <span class="feature-icon" aria-hidden="true">⚛️</span>
+                    <span class="feature-icon" aria-hidden="true"><i class="fas fa-atom"></i></span>
                     <h3>Advanced Oxygenation</h3>
                     <p>Utilizing cutting-edge technology to infuse water with 5-7x more dissolved oxygen than standard water, enhancing cellular hydration and energy metabolism.</p>
                 </div>
                 <div class="feature-card">
-                    <span class="feature-icon" aria-hidden="true">🔬</span>
+                    <span class="feature-icon" aria-hidden="true"><i class="fas fa-flask"></i></span>
                     <h3>Laboratory Certified</h3>
                     <p>Every batch undergoes rigorous testing and quality assurance protocols to ensure consistent oxygen levels and absolute purity standards.</p>
                 </div>
                 <div class="feature-card">
-                    <span class="feature-icon" aria-hidden="true">💎</span>
+                    <span class="feature-icon" aria-hidden="true"><i class="fas fa-gem"></i></span>
                     <h3>Premium Sourcing</h3>
                     <p>Sourced from pristine natural springs and processed through multi-stage filtration systems to maintain mineral balance and exceptional taste.</p>
                 </div>
                 <div class="feature-card">
-                    <span class="feature-icon" aria-hidden="true">🌱</span>
+                    <span class="feature-icon" aria-hidden="true"><i class="fas fa-leaf"></i></span>
                     <h3>Sustainable Operations</h3>
                     <p>Committed to environmental stewardship through recyclable glass packaging, carbon-neutral facilities, and responsible water management.</p>
                 </div>
@@ -961,19 +1026,44 @@
             </div>
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <div class="benefit-icon" aria-hidden="true">⚡</div>
+                    <div class="benefit-icon" aria-hidden="true"><i class="fas fa-bolt"></i></div>
                     <h3>Enhanced Athletic Performance</h3>
                     <p>Improved oxygen delivery to muscles may support endurance, reduce lactate accumulation, and accelerate post-exercise recovery through optimized aerobic metabolism.</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon" aria-hidden="true">🧠</div>
+                    <div class="benefit-icon" aria-hidden="true"><i class="fas fa-brain"></i></div>
                     <h3>Cognitive Function Support</h3>
                     <p>The brain consumes approximately 20% of the body's oxygen. Enhanced oxygenation may support mental clarity, focus, and cognitive performance during demanding tasks.</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon" aria-hidden="true">💧</div>
+                    <div class="benefit-icon" aria-hidden="true"><i class="fas fa-tint"></i></div>
                     <h3>Optimal Hydration</h3>
                     <p>Superior cellular hydration through enhanced water absorption, supporting blood pressure regulation, temperature control, and nutrient transport throughout the body.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery">
+            <div class="section-header">
+                <div class="section-subtitle">Lifestyle &amp; Performance</div>
+                <h2 class="section-title">OX Water in Every Moment</h2>
+                <p class="section-description">From daily hydration to peak performance, OX Water fuels an active, health-conscious lifestyle.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item gallery-feature">
+                    <img src="assets/ox3.jpeg" alt="The OX Water bottle range chilled on ice" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/ox5.jpeg" alt="Athlete enjoying OX Water outdoors" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/ox2.jpeg" alt="Man staying hydrated with OX Water" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/ox6.jpeg" alt="Close-up of an OX Water bottle" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/ox1.jpeg" alt="Refreshing sip of OX Water" loading="lazy">
                 </div>
             </div>
         </section>
@@ -985,12 +1075,12 @@
             </div>
             <div class="vm-grid">
                 <div class="vm-card">
-                    <span class="vm-icon" aria-hidden="true">🎯</span>
+                    <span class="vm-icon" aria-hidden="true"><i class="fas fa-bullseye"></i></span>
                     <h2>Our Vision</h2>
                     <p>To revolutionize the hydration industry by establishing oxygen-enriched water as the gold standard for premium wellness beverages, combining scientific innovation with uncompromising quality and sustainability.</p>
                 </div>
                 <div class="vm-card">
-                    <span class="vm-icon" aria-hidden="true">🚀</span>
+                    <span class="vm-icon" aria-hidden="true"><i class="fas fa-rocket"></i></span>
                     <h2>Our Mission</h2>
                     <p>To deliver scientifically optimized hydration solutions that enhance human performance and wellbeing. Through proprietary oxygenation technology and rigorous quality standards, we provide a superior water experience that supports active, health-conscious lifestyles.</p>
                 </div>
@@ -1007,17 +1097,17 @@
                 </div>
                 <div class="contact-grid">
                     <div class="contact-card">
-                        <span class="contact-icon" aria-hidden="true">📞</span>
+                        <span class="contact-icon" aria-hidden="true"><i class="fas fa-phone"></i></span>
                         <h3>Phone</h3>
                         <p>+27 65 976 5690</p>
                     </div>
                     <div class="contact-card">
-                        <span class="contact-icon" aria-hidden="true">✉️</span>
+                        <span class="contact-icon" aria-hidden="true"><i class="fas fa-envelope"></i></span>
                         <h3>Email</h3>
                         <p>info.suc@aol.com</p>
                     </div>
                     <div class="contact-card">
-                        <span class="contact-icon" aria-hidden="true">📍</span>
+                        <span class="contact-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></span>
                         <h3>Corporate Office</h3>
                         <p>Financial Square, Entrance 5, 1st Floor<br>Office B7, C/O Mandela & Woitemade St<br>Emalahleni, South Africa</p>
                     </div>
